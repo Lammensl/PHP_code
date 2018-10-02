@@ -9,7 +9,7 @@ or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 mysqli_select_db($dbLink , "lammenslouis_bdtp2")
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 $query = 'INSERT INTO user (Date, Email ...) VALUES (\'' . $today . '\', \''
-. $email . '\', '  ')';
+. $email . '\')';
 
 
     $id = $_POST["Identifiant"];

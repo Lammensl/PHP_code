@@ -1,9 +1,9 @@
 <?php
-$dbLink = mysqli_connect("mysql-lammenslouis.alwaysdata.net", "166948", "Jrdppdsvp")
+$dbLink = mysqli_connect("mysql-lammenslouis.alwaysdata.net", "166948_louis", "phpcc")
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 mysqli_select_db($dbLink , "lammenslouis_bdtp2")
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
-$query = 'SELECT Id, EMail, Date FROM user';
+$query = 'SELECT Id, EMail, Date, Telephone FROM user';
 
 if(!($dbResult = mysqli_query($dbLink, $query)))
 {
@@ -18,8 +18,10 @@ if(!($dbResult = mysqli_query($dbLink, $query)))
 while($dbRow = mysqli_fetch_assoc($dbResult))
 {
     echo $dbRow['Id'] . '<br/>';
-    echo $dbRow['Email'] . '<br/>';
+    echo $dbRow['EMail'] . '<br/>';
     echo $dbRow['Date'] . '<br/>';
+    echo $dbRow['Telephone'] . '<br/>';
+
     echo '<br/><br/>';
 }
 ?>
